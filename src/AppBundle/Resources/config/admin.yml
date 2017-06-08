@@ -1,0 +1,57 @@
+# src/AppBundle/Resources/config/admin.yml
+
+services:
+    app.admin.clients:
+        class: AppBundle\Admin\ClientsAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Gestion", label: "Clients" }
+        arguments:
+            - ~
+            - AppBundle\Entity\Clients
+            - ~
+        calls:
+            - [ setTranslationDomain, [AppBundle]]
+
+    app.admin.subscriptions:
+        class: AppBundle\Admin\SubscriptionsAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Gestion", label: "Subscriptions" }
+        arguments:
+            - ~
+            - AppBundle\Entity\Subscriptions
+            - ~
+        calls:
+            - [ setTranslationDomain, [AppBundle]]
+
+    app.admin.licences:
+        class: AppBundle\Admin\LicencesAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Gestion", label: "Licences" }
+        arguments:
+            - ~
+            - AppBundle\Entity\Licences
+            - ~
+        calls:
+            - [ setTranslationDomain, [AppBundle]]
+
+    app.admin.products:
+        class: AppBundle\Admin\ProductsAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Gestion", label: "Products" }
+        arguments:
+            - ~
+            - AppBundle\Entity\Products
+            - ~
+        calls:
+            - [ setTranslationDomain, [AppBundle]]
+    app.admin.plan_rate:
+        class: AppBundle\Admin\PlanRateAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Gestion", label: "PlanRate" }
+        arguments:
+            - ~
+            - AppBundle\Entity\PlanRate
+            - ~
+        calls:
+            - [ setTranslationDomain, [AppBundle]]
+    
